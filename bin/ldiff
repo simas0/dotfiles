@@ -1,0 +1,16 @@
+#!/bin/bash
+echo "usage:"
+echo "ldiff b4a89b4 ab0465a folder/filename.tex"
+
+TMPDIR=$(mktemp -d /tmp/ldiff.XXXXXX)
+echo "Cloning commit " $1 " to " $TMPDIR
+git archive $1 | tar -x -C $TMPDIR
+DIR=$(dirname "${3}")
+echo "Copying file " $3 " from commit " $2 " to " ${TMPDIR}/${3}.old
+git show ${2}:${3} > ${TMPDIR}/${3}.old
+latexdiff --encoding=utf8 ${TMPDIR}/${3} ${TMPDIR}/${3}.old > ${TMPDIR}/${DIR}/temp_file-diff.tex 2>/dev/null
+pdflatex -interaction nonstopmode -output-directory ${TMPDIR}/${DIR} ${TMPDIR}/${DIR}/temp_file-diff.tex
+okular ${TMPDIR}/${DIR}/temp_file-diff.pdf
+#rm -rf $TMPDIR
+
+

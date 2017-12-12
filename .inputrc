@@ -1,0 +1,14 @@
+set convert-meta on
+
+"\M-j": backward-char
+"\M-l": forward-char
+"\M-i": previous-history
+"\M-k": next-history
+"\M-u": delete-char
+"\C-\M-l": forward-word
+"\C-\M-j": backward-word
+"\M-h": beginning-of-line
+"\M-;": end-of-line
+"\C-\M-u": kill-word
+"\C-\M-y": backward-kill-word
+

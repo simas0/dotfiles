@@ -1,0 +1,7 @@
+clear Lock
+clear Control
+clear mod4
+keycode 66 = nabla
+!keycode 134 = Control_R
+add Control = Control_R
+add Control = Control_L

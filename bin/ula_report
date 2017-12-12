@@ -1,0 +1,7 @@
+TMPDIR=/home/augusto/rsync/Backups/UmLivroAberto/BookCloud/repos/Volume_1/master/source/
+
+TMPDIR2=$(mktemp -d /tmp/ula_report_html.XXXXXX)
+
+gitstats $TMPDIR $TMPDIR2
+
+sensible-browser $TMPDIR2/index.html

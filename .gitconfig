@@ -1,0 +1,17 @@
+[difftool.latex]
+        cmd = git-latexdiff \"$LOCAL\" \"$REMOTE\"
+[difftool]
+        prompt = false
+[user]
+	name = Augusto Teixeira
+	email = augusto@impa.br
+[push]
+	default = simple
+[core]
+	editor = emacs
+[alias]
+        tree = log --graph --decorate --pretty=oneline --abbrev-commit
+        history = log --graph --full-history --all --color --pretty=format:\"%C(cyan)%h %C(yellow)%ar %C(red)%d %C(reset)%s%C(green) [%cn]\"
+        ldiff = difftool -t latex
+
+

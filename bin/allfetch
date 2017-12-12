@@ -1,0 +1,20 @@
+#!/bin/bash
+
+trap "wipe -f -q -Q 2 /tmp/git_repos 2> /dev/null" 0 1 2 5 15
+
+cd ~/git
+
+CUR_DIR=$(pwd)
+
+find . -name .git -type d -prune > /tmp/git_repos
+
+#cat /tmp/git_repos
+
+while read p; do
+    dir=`echo ${p} | sed -e 's/\/.git/\//'`
+    cd ${dir}
+      # echo ${p}
+      git fetch
+      cd $CUR_DIR
+done < /tmp/git_repos
+

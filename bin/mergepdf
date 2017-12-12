@@ -1,0 +1,6 @@
+#!/bin/bash
+
+gs \
+  -o merged.pdf \
+  -sDEVICE=pdfwrite \
+  -dPDFSETTINGS=/prepress $@

@@ -1,0 +1,20 @@
+# Ask for password
+eval `ssh-agent`
+ssh-add /home/augusto/.ssh/pretinho
+
+# Sync the repos
+rsync -azv gutosurrex@notres.crabdance.com:/var/www/BookCloud/repos /home/augusto/rsync/Backups/UmLivroAberto/BookCloud/
+
+# Sync Word Press
+rsync -azv gutosurrex@notres.crabdance.com:/var/lib/wordpress/wp-content/backups /home/augusto/rsync/Backups/UmLivroAberto/WP
+
+# Get the MySQL backup
+ssh gutosurrex@notres.crabdance.com mysqldump --opt -u gutosurrex -ps9ds93cixzzock2n38 bookcloud > /tmp/backupfile.sql
+
+# Sync it to the correct folder
+rsync -azv /tmp/backupfile.sql /home/augusto/rsync/Backups/UmLivroAberto/MySQL_BookCloud
+
+ls -l /home/augusto/rsync/Backups/UmLivroAberto/MySQL_BookCloud
+
+# Remove id from agend
+ssh-add -D

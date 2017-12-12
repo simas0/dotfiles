@@ -1,0 +1,11 @@
+#!/bin/bash
+
+git fetch && git whatchanged ..origin/master && git merge
+
+
+
+
+
+
+
+

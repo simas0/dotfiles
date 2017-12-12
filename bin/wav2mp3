@@ -1,0 +1,6 @@
+for f in *.wav; do
+ n="${f%.*}";
+ echo ${n};
+ lame -h "${f}" "${n}.mp3";
+done
+

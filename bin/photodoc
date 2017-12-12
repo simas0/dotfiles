@@ -1,0 +1,22 @@
+#!/bin/bash
+for f in IMG*.JPG
+do
+  echo "Processing $f..."
+  convert $f -negate temp1.jpg
+  convert temp1.jpg -blur 0x32 temp2.jpg
+  composite temp1.jpg -compose difference temp2.jpg temp3.jpg
+  convert temp3.jpg -auto-level \
+                 -level 10%,30% \
+                 -colorspace Gray \
+                 -negate converted_$f
+  rm temp1.jpg temp2.jpg temp3.jpg
+done
+
+convert converted* -rotate "270>" -resize 1240x1753 -units PixelsPerInch -density 150x150 output.pdf
+
+rm converted*
+
+#convert I3.jpg -auto-level I4.jpg
+#convert I4.jpg -level 0,30% I5.jpg
+#convert I5.jpg -colorspace Gray I6.jpg
+#convert I6.jpg -negate I7.jpg

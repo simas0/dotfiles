@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ -n "$(allgitoff)" ]; then
+   echo -n " git "
+fi
+
+if [ -n "$(unidiff)" ]; then
+   echo -n " uni "
+fi
+
+echo " "
+   
+   

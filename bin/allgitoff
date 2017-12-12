@@ -1,0 +1,25 @@
+#!/bin/bash
+
+TEMP_FILE=/tmp/git_repos$(cat /dev/urandom | tr -cd 'a-f0-9' | head -c 32)
+trap "wipe -f -q -Q 2 $TEMP_FILE 2> /dev/null" 0 1 2 5 15
+
+cd ~/git
+
+CUR_DIR=$(pwd)
+
+find . -name .git -type d -prune > $TEMP_FILE
+
+while read p; do
+    dir=`echo ${p} | sed -e 's/\/.git/\//'`
+    cd ${dir}
+      diff <(echo "nothing to commit, working directory clean") \
+	  <(git status | tail -n1) > /dev/null
+      if [ "$?" != "0" ]; then
+	  echo ${dir} " $(git status -s | tail -n1)" | cut -c1-40
+      fi
+      if [ -n "$(git log origin/master..master)" ]; then
+	  echo ${dir} " needs to push"
+      fi
+      cd $CUR_DIR
+done < $TEMP_FILE
+

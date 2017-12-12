@@ -1,0 +1,11 @@
+#!/bin/bash
+TMPDIR=$(mktemp -d /tmp/git-latexdiff.XXXXXX)
+echo "Diffing files: " "$1" "$2"
+latexdiff "$1" "$2" > $TMPDIR/diff.tex
+pdflatex -interaction nonstopmode -output-directory $TMPDIR $TMPDIR/diff.tex
+okular $TMPDIR/diff.pdf
+rm -rf $TMPDIR
+echo "usage"
+echo "git ldiff b4a89b4 ab0465a"
+
+
