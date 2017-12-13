@@ -134,7 +134,7 @@
     )
 
 ;; send scroll bar to the right
-  (set-scroll-bar-mode 'right)
+;;  (set-scroll-bar-mode 'right)
 
 ;; set visual beep
   (setq visible-bell t)
