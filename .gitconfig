@@ -8,7 +8,7 @@
 [push]
 	default = simple
 [core]
-	editor = emacs
+	editor = emacs -nw
 [alias]
         tree = log --graph --decorate --pretty=oneline --abbrev-commit
         history = log --graph --full-history --all --color --pretty=format:\"%C(cyan)%h %C(yellow)%ar %C(red)%d %C(reset)%s%C(green) [%cn]\"
