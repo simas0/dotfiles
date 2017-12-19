@@ -269,7 +269,7 @@
 ;; yasnippet configuration
 ;;(add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-20150212.240/")
 (require 'yasnippet)
-(setq yas-snippet-dirs (format "%s%s" drop-base-path "sys/my_init/snippets"))
+(setq yas-snippet-dirs (format "%s%s" drop-base-path "snippets"))
 (yas-global-mode 1)
 (yas-reload-all)
 
@@ -286,7 +286,7 @@
 (global-set-key (kbd "M-q") 'unscrewup-paragraph)
 
 ;; set a personal dictionary for ispell
-  (setq ispell-personal-dictionary (format "%s%s" drop-base-path "sys/my_init/dictionaries/.my_dict"))
+  (setq ispell-personal-dictionary (format "%s%s" drop-base-path "dictionaries/my_dict"))
 
 (require 'package)
 (package-initialize)

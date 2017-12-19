@@ -185,3 +185,5 @@
 ;;(add-hook 'before-make-frame-hook 'set-frame-size-according-to-resolution)
 ;;(add-hook 'after-init-hook 'set-frame-size-according-to-resolution)
 
+;; remove menu bar
+(menu-bar-mode -1)
