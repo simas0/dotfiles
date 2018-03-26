@@ -27,4 +27,4 @@
     ("bfdcbf0d33f3376a956707e746d10f3ef2d8d9caa1c214361c9c08f00a1c8409" default)))
  '(package-selected-packages
    (quote
-    (smex zenburn-theme yasnippet use-package undo-tree markdown-mode magit key-chord ido-vertical-mode hydra flx-ido auctex ace-jump-mode))))
+    (smex zenburn-theme yasnippet use-package undo-tree markdown-mode magit key-chord ido-vertical-mode hydra flx-ido auctex ace-jump-mode solidity-mode))))
