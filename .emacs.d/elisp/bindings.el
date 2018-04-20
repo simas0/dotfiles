@@ -104,3 +104,7 @@
 ;; RET gets identation right
 (global-set-key (kbd "RET") 'newline-and-indent)
 
+;; disable M-. from javascript mode map
+(defun my-js-hook ()
+  (define-key js-mode-map "\M-." nil))
+(add-hook 'js-mode-hook 'my-js-hook)
