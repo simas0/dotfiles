@@ -381,3 +381,14 @@
 
 ;; identation in javascript
   (setq js-indent-level 2)
+
+;; swap dictionary between portuguese and english
+(defun fd-switch-dictionary()
+  (interactive)
+  (let* ((dic ispell-current-dictionary)
+    	 (change (if (string= dic "portugues") "english" "portugues")))
+    (ispell-change-dictionary change)
+    (message "Dictionary switched from %s to %s" dic change)
+    ))
+
+(global-set-key (kbd "<f8>")   'fd-switch-dictionary)

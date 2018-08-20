@@ -1,0 +1,5 @@
+#!/bin/bash
+
+fswebcam --delay 2 -r 1024x480 /tmp/blagetqr.jpg
+zbarimg --raw /tmp/blagetqr.jpg
+wipe -f -q /tmp/blagetqrbla.jpg
