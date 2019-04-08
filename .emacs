@@ -28,7 +28,7 @@
     ("bfdcbf0d33f3376a956707e746d10f3ef2d8d9caa1c214361c9c08f00a1c8409" default)))
  '(package-selected-packages
    (quote
-    (cargo company racer rust-mode protobuf-mode smex zenburn-theme yasnippet use-package undo-tree markdown-mode magit key-chord ido-vertical-mode hydra flx-ido auctex ace-jump-mode solidity-mode))))
+    (yaml-mode cargo company racer rust-mode protobuf-mode smex zenburn-theme yasnippet use-package undo-tree markdown-mode magit key-chord ido-vertical-mode hydra flx-ido auctex ace-jump-mode solidity-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
