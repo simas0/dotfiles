@@ -15,3 +15,5 @@
         ldiff = difftool -t latex
 
 
+[diff]
+	submodule = log

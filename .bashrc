@@ -62,9 +62,18 @@ function parse_git_dirty {
 export PS1="\[\e[32m\]\u\[\e[m\] \[\e[32m\]\h\[\e[m\] \[\e[36m\]\W\[\e[m\] \`parse_git_branch\`\[\e[31m\]\`nonzero_return\`\[\e[m\]\[\e[32m\]\\$\[\e[m\] "
 
 . /etc/bash_completion
+<<<<<<< HEAD
 . /usr/share/bash-completion/completions/git
 
 . $HOME/.bash_completion
 
 export PATH=$PATH:/home/augusto/bin
 export PATH=$PATH:/home/augusto/.cargo/bin
+=======
+#. /etc/bash_completion.d/git-completion.bash
+
+. $HOME/.bash_completion
+PATH="$HOME/go/bin:$PATH"
+PATH="$HOME/go-ethereum/build/bin:$PATH"
+PATH="$HOME/.cargo/bin:$PATH"
+>>>>>>> 0e95bdb8c500503ba112106f618d8e398b6756b8

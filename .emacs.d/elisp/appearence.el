@@ -171,8 +171,8 @@
       ;; and smaller 80 column windows for smaller displays
       ;; pick whatever numbers make sense for you
       (if (> (x-display-pixel-width) 1000)
-	(set-frame-size (selected-frame) 100 80)
-	(set-frame-size (selected-frame) 70 40))
+          (set-frame-size (selected-frame) 100 80)
+        (set-frame-size (selected-frame) 70 40))
       ;; for the height, subtract a couple hundred pixels
       ;; from the screen height (for panels, menubars and
       ;; whatnot), then divide by the height of a char to
@@ -187,3 +187,8 @@
 
 ;; remove menu bar
 (menu-bar-mode -1)
+
+;; mark 80th column in whitespace mode
+(require 'whitespace)
+(setq whitespace-style '(face empty tabs lines-tail trailing))
+(global-whitespace-mode t)
