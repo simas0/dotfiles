@@ -28,3 +28,5 @@ if [[ $rc == 0 ]];
   then xmodmap $HOME/.Xmodmap;
 fi
 
+
+export PATH="$HOME/.cargo/bin:$PATH"

@@ -24,7 +24,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("bfdcbf0d33f3376a956707e746d10f3ef2d8d9caa1c214361c9c08f00a1c8409" default)))
+    ("84890723510d225c45aaff941a7e201606a48b973f0121cb9bcb0b9399be8cba" "bfdcbf0d33f3376a956707e746d10f3ef2d8d9caa1c214361c9c08f00a1c8409" default)))
  '(package-selected-packages
    (quote
     (lua-mode smex zenburn-theme yasnippet use-package undo-tree markdown-mode magit key-chord ido-vertical-mode hydra flx-ido auctex ace-jump-mode solidity-mode))))
