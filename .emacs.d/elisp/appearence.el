@@ -6,13 +6,6 @@
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (setq require-final-newline nil)
 
-;; Do not change super-/sub-script font
-  (setq font-latex-script-display (quote (nil)))
-  (custom-set-faces
-    '(font-latex-subscript-face ((t nil)))
-    '(font-latex-superscript-face ((t nil)))
-  )
-
 ;; proper word wrapping
   (global-visual-line-mode t)
 
@@ -27,10 +20,6 @@
 
 ;; disable startup screen
   (setq inhibit-splash-screen t)
-
-;; Default frame height
-;  (add-to-list 'default-frame-alist '(height . 59))
-;  (add-to-list 'default-frame-alist '(width  . 170))
 
 ;; show whitespace
   ;(setq-default show-trailing-whitespace t)
@@ -53,37 +42,9 @@
                    nil
                    :background "burlywood4")
 
-;; send mode-line to header
-;  (setq-default header-line-format mode-line-format) ; Copy mode-line
-;  (setq-default mode-line-format nil) ; Remove mode-line
-
 ;; minibuffer gets orange
   (set-face-background 'minibuffer-prompt "orange")
   (set-face-foreground 'minibuffer-prompt "black")
-
-  (custom-set-faces
-    '(cfw:face-title ((t (:foreground "#f0dfaf" :weight normal :height 2.0 :inherit variable-pitch)))) ;; Date (main) title color and background.
-    '(cfw:face-header ((t (:foreground "#d0bf8f" :weight normal ))))
-    '(cfw:face-sunday ((t :foreground "#cc9393" :background "#3f3f3f"  :weight normal))) ;; Sunday main title and dates color.
-    '(cfw:face-saturday ((t :foreground "#cc9393" :background "#3f3f3f"  :weight normal))) ;; Saturday main title and dates color.
-    '(cfw:face-holiday ((t :foreground "#cc9393" :background "#3f3f3f"  :weight normal))) ;; Holiday title background and foreground.
-    '(cfw:face-grid ((t :foreground "DarkGrey" ))) ;; Grid lines colors.
-    '(cfw:face-default-content ((t :foreground "#bfe0bf"))) ;; Default titles of entries.
-    '(cfw:face-regions ((t :foreground "#bfe0bf"  :inherit cfw:face-day-title))) ;;
-    '(cfw:face-periods ((t :foreground "#bfebbf"  :inherit cfw:face-day-title))) ;; number of entries per day.
-    '(cfw:face-day-title ((t :background "#3f3f3f" ))) ;; Day main title color.
-    '(cfw:face-default-day ((t :weight normal   :inherit cfw:face-day-title)))
-    '(cfw:face-annotation ((t :foreground "RosyBrown"  :inherit cfw:face-day-title)))
-    '(cfw:face-disable ((t :foreground "DarkGray"  :inherit cfw:face-day-title)))
-    '(cfw:face-today-title ((t :background "#bc8383"  :weight normal))) ;; Today title background and color?
-    '(cfw:face-today ((t :background: "#dc8cc3"  :foreground "black" :weight normal))) ;; Today title background and color?
-    '(cfw:face-select ((t :background "burlywood4"  ))) ;; Today focus title background and foreground.
-    '(cfw:face-toolbar ((t :foreground "Steelblue4"   :background "#3f3f3f")))
-    '(cfw:face-toolbar-button-off ((t :foreground "#ffffff" :background "#3f3f3f" :weight normal )))
-    '(cfw:face-toolbar-button-on ((t :foreground "#ffffff" :background "burlywood4" :weight normal ))))
-    (setq cfw:face-item-separator-color nil)
-  )
-  (add-hook 'after-init-hook 'zenburn-init)
 
 ;; deactivate toolbar (with copy, paste...)
   (tool-bar-mode -1)
@@ -127,14 +88,9 @@
 ;; shorten mode names in mode-line
   (when (require 'diminish nil 'noerror)
     (eval-after-load "Undo-Tree"
-       '(diminish 'undo-tree-mode "U-T"))
-;      (diminish 'predictive-mode "Pred")
-;      (diminish 'auto-completion-mode "Comp")
-      (diminish 'overwrite-mode "Ovrw")
+      '(diminish 'undo-tree-mode "U-T"))
+       (diminish 'overwrite-mode "Ovrw")
     )
-
-;; send scroll bar to the right
-;;  (set-scroll-bar-mode 'right)
 
 ;; set visual beep
   (setq visible-bell t)

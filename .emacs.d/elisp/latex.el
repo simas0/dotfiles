@@ -10,6 +10,13 @@
 ;; change equation standard label prefix
 (setq LaTeX-equation-label "e:")
 
+;; Do not change super-/sub-script font
+  (setq font-latex-script-display (quote (nil)))
+  (custom-set-faces
+    '(font-latex-subscript-face ((t nil)))
+    '(font-latex-superscript-face ((t nil)))
+  )
+
 ;; Alt-2 for latex
 ;(global-set-key (kbd "M-2") 'TeX-command-master)
 
@@ -78,12 +85,6 @@
   )
 
 (setq bibretrieve-backends '(("msn" . 10) ("arxiv" . 5)))
-
-;; include bibretrieve to get bibtex entries from mathscinet
-;  (if (eq system-type 'windows-nt)
-;    (load "C:/Users/Augusto/Dropbox/sys/my_init/other_els/bibretrieve.el")
-;    (load (format "%s%s" drop-base-path "sys/my_init/other_els/bibretrieve.el"))
-;  )
 
 ;; okular para abrir dvi
   (setq TeX-view-program-list

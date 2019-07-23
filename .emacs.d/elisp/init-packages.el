@@ -8,9 +8,9 @@
 
 ; list the packages you want
 (setq package-list
-      '(ace-jump-mode auctex flx-ido flx hydra ido-vertical-mode key-chord magit
-                      git-commit magit-popup dash markdown-mode undo-tree
-                      use-package diminish bind-key with-editor async yasnippet
+      '(ace-jump-mode auctex flx-ido flx ido-vertical-mode key-chord
+                      dash markdown-mode undo-tree
+                      use-package diminish yasnippet
                       zenburn-theme smex))
 
 ; activate all the packages
