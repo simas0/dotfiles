@@ -10,7 +10,7 @@
 (setq package-list
       '(ace-jump-mode auctex flx-ido flx ido-vertical-mode key-chord
                       dash markdown-mode undo-tree
-                      use-package diminish yasnippet
+                      use-package yasnippet
                       zenburn-theme smex))
 
 ; activate all the packages

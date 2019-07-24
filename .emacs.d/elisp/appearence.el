@@ -86,11 +86,11 @@
     ))
 
 ;; shorten mode names in mode-line
-  (when (require 'diminish nil 'noerror)
-    (eval-after-load "Undo-Tree"
-      '(diminish 'undo-tree-mode "U-T"))
-       (diminish 'overwrite-mode "Ovrw")
-    )
+;  (when (require 'diminish nil 'noerror)
+;    (eval-after-load "Undo-Tree"
+;      '(diminish 'undo-tree-mode "U-T"))
+;       (diminish 'overwrite-mode "Ovrw")
+;    )
 
 ;; set visual beep
   (setq visible-bell t)
