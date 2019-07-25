@@ -20,10 +20,3 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-
-command -v xmodmap
-
-rc=$?
-if [[ $rc == 0 ]];
-  then xmodmap $HOME/.Xmodmap;
-fi
