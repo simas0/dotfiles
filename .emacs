@@ -4,12 +4,12 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(setq drop-base-path "/home/augusto/.emacs.d/elisp/")
+(setq drop-base-path (format "%s%s%s" "/home/" user-login-name "/.emacs.d/elisp/"))
 
 (load (format "%s%s" drop-base-path "init-packages.el"))
 (load (format "%s%s" drop-base-path "bindings.el"))
 (load (format "%s%s" drop-base-path "latex.el"))
-(load (format "%s%s" drop-base-path "rust.el"))
+;(load (format "%s%s" drop-base-path "rust.el"))
 (load (format "%s%s" drop-base-path "key-chord-bindings.el"))
 (load (format "%s%s" drop-base-path "gertec_code.el"))
 (load (format "%s%s" drop-base-path "gertec.el"))

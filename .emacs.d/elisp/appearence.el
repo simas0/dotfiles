@@ -42,9 +42,9 @@
                    nil
                    :background "burlywood4")
 
-;; minibuffer gets orange
-  (set-face-background 'minibuffer-prompt "orange")
-  (set-face-foreground 'minibuffer-prompt "black")
+    ;; minibuffer gets orange
+    (set-face-background 'minibuffer-prompt "orange")
+    (set-face-foreground 'minibuffer-prompt "black"))
 
 ;; deactivate toolbar (with copy, paste...)
   (tool-bar-mode -1)
@@ -95,56 +95,10 @@
 ;; set visual beep
   (setq visible-bell t)
 
-; set frame size according to screen resolution (horizontal)
-(defun set-frame-size-according-to-resolution ()
-  (interactive)
-  (when (display-graphic-p)
-    (progn
-      ;; use 175 char wide window for largeish displays
-      ;; and smaller 80 column windows for smaller displays
-      ;; pick whatever numbers make sense for you
-      (if (> (x-display-pixel-width) 1400)
-	(set-frame-size (selected-frame) 175 50)
-	(set-frame-size (selected-frame) 124 35))
-      ;; for the height, subtract a couple hundred pixels
-      ;; from the screen height (for panels, menubars and
-      ;; whatnot), then divide by the height of a char to
-      ;; get the height we want
-      ;; (add-to-list 'default-frame-alist
-      ;;   (cons 'height (/ (- (x-display-pixel-height) 100)
-      ;;   (frame-char-height))))
-    )))
-;; not working
-;;(add-hook 'before-make-frame-hook 'set-frame-size-according-to-resolution)
-;;(add-hook 'after-init-hook 'set-frame-size-according-to-resolution)
-
-; set frame size according to screen resolution (vertical screen)
-(defun set-frame-size-according-to-resolution-vertical ()
-  (interactive)
-  (when (display-graphic-p)
-    (progn
-      ;; use 175 char wide window for largeish displays
-      ;; and smaller 80 column windows for smaller displays
-      ;; pick whatever numbers make sense for you
-      (if (> (x-display-pixel-width) 1000)
-          (set-frame-size (selected-frame) 100 80)
-        (set-frame-size (selected-frame) 70 40))
-      ;; for the height, subtract a couple hundred pixels
-      ;; from the screen height (for panels, menubars and
-      ;; whatnot), then divide by the height of a char to
-      ;; get the height we want
-      ;; (add-to-list 'default-frame-alist
-      ;;   (cons 'height (/ (- (x-display-pixel-height) 100)
-      ;;   (frame-char-height))))
-    )))
-;; not working
-;;(add-hook 'before-make-frame-hook 'set-frame-size-according-to-resolution)
-;;(add-hook 'after-init-hook 'set-frame-size-according-to-resolution)
-
 ;; remove menu bar
-(menu-bar-mode -1)
+  (menu-bar-mode -1)
 
 ;; mark 80th column in whitespace mode
-(require 'whitespace)
-(setq whitespace-style '(face empty tabs lines-tail trailing))
-(global-whitespace-mode t)
+  (require 'whitespace)
+  (setq whitespace-style '(face empty tabs lines-tail trailing))
+  (global-whitespace-mode t)
