@@ -270,8 +270,8 @@
 ;;(add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-20150212.240/")
 (require 'yasnippet)
 (setq yas-snippet-dirs (format "%s%s" drop-base-path "snippets"))
-(yas-global-mode 1)
-(yas-reload-all)
+;(yas-global-mode 1)
+;(yas-reload-all)
 
 ;; fill paragraphs with fmt (using Knuth's algorithm)
 (defun unscrewup-paragraph (beg end)

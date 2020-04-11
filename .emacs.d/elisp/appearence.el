@@ -10,13 +10,13 @@
   (global-visual-line-mode t)
 
 ;; show matching brackets
-  (require 'paren)
-  (show-paren-mode t)
+;  (require 'paren)
+;  (show-paren-mode t)
   ;; fix \{ \} problems
-  (set-face-background 'show-paren-match-face "#ffff00")
-  (set-face-background 'show-paren-mismatch-face "#d30102")
-  (add-hook 'latex-mode-hook
-    (function (lambda () (require 'latex-paren))))
+;  (set-face-background 'show-paren-match-face "#ffff00")
+;  (set-face-background 'show-paren-mismatch-face "#d30102")
+;  (add-hook 'latex-mode-hook
+;    (function (lambda () (require 'latex-paren))))
 
 ;; disable startup screen
   (setq inhibit-splash-screen t)
