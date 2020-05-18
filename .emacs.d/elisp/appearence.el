@@ -99,9 +99,9 @@
   (menu-bar-mode -1)
 
 ;; mark 80th column in whitespace mode
-  (require 'whitespace)
-  (setq whitespace-style '(face empty tabs lines-tail trailing))
-  (global-whitespace-mode t)
+  ;(require 'whitespace)
+  ;(setq whitespace-style '(face empty tabs lines-tail trailing))
+  ;(global-whitespace-mode t)
 
 (setq-default cursor-type 'bar)
 (set-cursor-color "#00ff00") 
